@@ -3,20 +3,31 @@ require('styles/App.css');
 
 import React from 'react';
 
-let yeomanImage = require('../images/yeoman.png');
+let Cup = React.createClass({
+  render:function(){
 
-class AppComponent extends React.Component {
-  render() {
+    return <div></div>
+  }
+});
+
+let AppComponent = React.createClass ({
+  getInitialState: function() {
+    return {
+
+    }
+  },
+  StartGame: function(){
+
+  },
+  render: function(){
+
     return (
-      <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
-      </div>
+        <div className = "board">
+          <h1 className = "header">Shell Game</h1>
+          <button className = "button" onClick={this.StartGame}>Start the game!</button>
+        </div>
     );
   }
-}
-
-AppComponent.defaultProps = {
-};
+});
 
 export default AppComponent;
