@@ -1,6 +1,6 @@
 {
   "generator-react-webpack": {
-    "appName": "reactShellGame",
+    "appName": "shellGame",
     "style": "css",
     "postcss": false
   }

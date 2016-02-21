@@ -3,28 +3,43 @@ require('styles/App.css');
 
 import React from 'react';
 
-let Cup = React.createClass({
+var Cup = React.createClass({
   render:function(){
 
-    return <div></div>
+    return (
+        <img className='cup' src="/images/silver-cup-th.png"/>
+    )
   }
 });
-
-let AppComponent = React.createClass ({
-  getInitialState: function() {
-    return {
-
+var Board = React.createClass({
+  //getInitialState: function() {
+  //  }
+  //  return {
+  //  }
+  //},
+  RestartGame: function(){},
+  render: function(){
+    var cups = [];
+    for (var i=0; i<3; i++) {
+      cups.push(<Cup key={i}/>);
     }
-  },
-  StartGame: function(){
-
-  },
+   return (
+     <div>
+       <h1 className = "header">Shell Game</h1>
+       <button className = "button" onClick={this.RestartGame}>Restart the game!</button>
+       <div className="cup-container">
+          {cups}
+       </div>
+     </div>
+   )
+  }
+});
+var AppComponent = React.createClass ({
   render: function(){
 
     return (
-        <div className = "board">
-          <h1 className = "header">Shell Game</h1>
-          <button className = "button" onClick={this.StartGame}>Start the game!</button>
+        <div className = "board-container">
+          <Board/>
         </div>
     );
   }

@@ -8,11 +8,19 @@
 .button {
 
 }
-.board{
+.board-container {
   margin:0 auto;
   width:800px;
   height:500px;
   background-color: #fffdea;
   border:10px solid #460844;
   text-align:center;
+}
+.cup-container {
+  margin:80px;
+}
+.cup {
+  margin:30px;
+  height:150px;
+  width:100px;
 }
