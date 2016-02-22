@@ -1,12 +1,7 @@
-
 .header {
   font-size: 40px;
   text-transform: uppercase;
   color: #460844;
-}
-
-.button {
-
 }
 .board-container {
   margin:0 auto;
@@ -17,10 +12,35 @@
   text-align:center;
 }
 .cup-container {
-  margin:80px;
+  margin:30px;
 }
 .cup {
   margin:30px;
   height:150px;
   width:100px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display:inline-block;
+  position:relative;
+  text-align:center;
 }
+.game-status{
+  color: #c5203f;
+  font-family:sans-serif;
+  font-weight:800;
+}
+.button{
+  margin:10px 0 10px 10px;
+  width:150px;
+  height:50px;
+  font-size:20px;
+  outline:none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #491352;
+  color:#fff;
+  border-radius:6px;
+}
+
+
