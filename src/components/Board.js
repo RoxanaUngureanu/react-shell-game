@@ -13,7 +13,7 @@ var Board = React.createClass({
     return {
       board: board,
       showTheBall:false,
-      clickedCup : 0,
+      clickedCup : null,
       gameStatus:''
     }
   },
@@ -21,8 +21,8 @@ var Board = React.createClass({
     var cups = [];
     for (var i=0; i<3; i++) {
 
-      var cup = <Cup index={i} key={i} showTheBall={ i === this.state.showTheBall}
-                     winner = {i === this.props.index}
+      var cup = <Cup index={i} key={i} showTheBall={i === this.state.showTheBall}
+                     clickedCup = {i === this.props.index}
                      onClick={this.onCupClick}/>;
 
       cups.push(cup);
@@ -42,6 +42,7 @@ var Board = React.createClass({
 
   onCupClick: function(index){
     this.setState({clickedCup:index, showTheBall:index});
+    console.log( {showTheBall:index})
     var array = this.state.board;
     for (var i = 0; i < array.length; i++){
       if(index === this.state.board[i].number) {
@@ -65,22 +66,5 @@ var Board = React.createClass({
     }
     this.setState({board:boardArray});
   }
-  //isWinner: function(index){
-  //  var array = this.state.board;
-  //  for (var i = 0; i < array.length; i++){
-  //    console.log("Array number ", array[i].number);
-  //    console.log("index ", index);
-  //    if (array[i].number == index){
-  //      console.log("WINNER!!!!!!!!!!!!!!!!!!!!!")
-  //      console.log('CONSOLE FIRST ' + array[i].number + ' ' + index)
-  //
-  //      return false }
-  //    //} else {
-  //    //  console.log("NOT A WINNER!")
-  //    //  console.log('CONSOLE SECOND ' + array[i].number + ' ' + index)
-  //    //}
-  //  }
-  //  return false
-  //}
 });
 export default Board;
