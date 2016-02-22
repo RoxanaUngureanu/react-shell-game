@@ -13,12 +13,13 @@ var Cup = React.createClass({
     var cupStyle = {background: cupImage, backgroundSize:'100%'};
 
     if (this.props.showTheBall){
-      cupStyle.background = ballImage;
-      cupStyle.backgroundSize = '100%';
+      cupStyle = {background: ballImage, backgroundSize:'100%'};
       console.log('BALL',this.props.showTheBall)
       console.log('CUP',this.props.clickedCup)
       console.log('INDEX',this.props.index)
 
+    //} else {
+    //  cupStyle.background = "red";
     }
     return (
       <div className='cup'  style={cupStyle} onClick={this.onClick}>

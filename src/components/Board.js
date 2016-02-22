@@ -41,14 +41,14 @@ var Board = React.createClass({
   },
 
   onCupClick: function(index){
-    this.setState({clickedCup:index, showTheBall:index});
-    console.log( {showTheBall:index})
+    this.setState({clickedCup:index,  showTheBall:true});
+
     var array = this.state.board;
     for (var i = 0; i < array.length; i++){
       if(index === this.state.board[i].number) {
-        this.setState({gameStatus: 'You Won!'});
+        this.setState({gameStatus: 'You Won!',  showTheBall:index});
       } else {
-        this.setState({gameStatus: 'You lost :('});
+        this.setState({gameStatus: 'You lost :(',  showTheBall:false});
       }
     }
   },
